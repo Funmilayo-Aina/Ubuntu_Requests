@@ -41,29 +41,23 @@ Save the image in binary mode
 Community: Your program should connect to the wider web community
 
 
-🔎 How the solution is achieved
-1. Community 🌐
 
 The script connects to the web community via HTTP requests to fetch shared images.
-We use the requests library to download the image content.
+ requests library is used to download the image content.
 
 2. Respect 🙏
 
-Not every connection works. We wrap everything in try/except and use response.raise_for_status() to respect HTTP status codes (404, 500, etc.).
+Not every connection works. Everything  was trackded with with try/except.
+Errors were handled gracefully without crashing
 
 3. Sharing 📂
 
-We organize images into a Fetched_Images/ folder so they can be easily shared later.
-We use os.makedirs("Fetched_Images", exist_ok=True) to create it safely.
+The organized imagesin the Fetched_Images/ folder can be shared by Ubuntu community later.
+
+os.makedirs("Fetched_Images", exist_ok=True)  was used to fetch and to create images safely.
 
 4. Practicality 🛠️
 
-We extract filenames from the URL using urllib.parse.urlparse. If no name is found, we generate a fallback like downloaded_image.jpg.
+Filenames were extracted from the URL using urllib.parse.urlparse. If no name is found, a fallback generated like downloaded_image.jpg.
 
-
-Respect: Handle errors gracefully without crashing
-
-
-Sharing: Organize the fetched images for later sharing
-
-Practicality: Create a tool that serves a real need
+The shared images will reduce the burden of image files sharing in the Ubuntu community.
